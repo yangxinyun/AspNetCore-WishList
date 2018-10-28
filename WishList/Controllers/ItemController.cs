@@ -23,22 +23,22 @@ namespace WishList.Controllers
         [HttpPost]
         public IActionResult Create(Item item)
         {
-            _context.items.Add(item);
+            _context.Items.Add(item);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
 
         public IActionResult Delete(int id)
         {
-            var it = _context.items.FirstOrDefault(e => e.ID == id);
-            _context.items.Remove(it);
+            var it = _context.Items.FirstOrDefault(e => e.ID == id);
+            _context.Items.Remove(it);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
 
         public IActionResult Index()
         {
-            var model = _context.items.ToList();
+            var model = _context.Items.ToList();
             return View("Index",model);
         }
     }
