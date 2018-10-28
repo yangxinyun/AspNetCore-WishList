@@ -13,7 +13,7 @@ namespace WishList.Controllers
         private readonly ApplicationDbContext _context;
         public ItemController(ApplicationDbContext dbcontext)
         {
-            this._context = dbcontext;
+            _context = dbcontext;
         }
         [HttpGet]
         public IActionResult Create()
